@@ -81,14 +81,39 @@
                                 <input type="radio" name="capital" th:field="${form.capital}" value="0" th:checked="${form.capital}=='0'"/>その他
                             </div>
 
+                            <!-- ラジオボタンを配置する例 -->
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                 <label>お勤め先の規模（従業員数）</label>
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="9" th:checked="${form.companySize}=='9'"/>１０名未満
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="29" th:checked="${form.companySize}=='29'"/>１０名以上３０名未満
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="49" th:checked="${form.companySize}=='49'"/>３０名以上５０名未満
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="99" th:checked="${form.companySize}=='99'"/>５０名以上１００名未満
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="499" th:checked="${form.companySize}=='499'"/>１００名以上５００名未満
-                                <input type="radio" name="companySize" th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'"/>５００名以上
+                                <div class="inline fields"> <!-- この中に記述したものが一行で表示される -->
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <!-- idは固有の名前をつける -->
+                                        <input type="radio" name="companySize" id="companySize9" th:field="${form.companySize}" value="9" th:checked="${form.companySize}=='9'"/>
+                                        <!-- forにidを指定する ラベルのクリックで選択できるようになる -->
+                                        <label for="companySize9">１０名未満</label>
+                                    </div> </div>
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <input type="radio" name="companySize" id="companySize29" th:field="${form.companySize}" value="29" th:checked="${form.companySize}=='29'"/>
+                                        <label for="companySize29">１０名以上３０名未満</label>
+                                    </div> </div>
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <input type="radio" name="companySize" id="companySize49" th:field="${form.companySize}" value="" th:checked="${form.companySize}=='49'"/>
+                                        <label for="companySize49">３０名以上５０名未満</label>
+                                    </div> </div>
+                                </div>
+                                <div class="inline fields">
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <input type="radio" name="companySize" id="companySize99" th:field="${form.companySize}" value="" th:checked="${form.companySize}=='99'"/>
+                                        <label for="companySize99">５０名以上１００名未満</label>
+                                    </div> </div>
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <input type="radio" name="companySize" id="companySize499" th:field="${form.companySize}" value="499" th:checked="${form.companySize}=='499'"/>
+                                        <label for="companySize499">１００名以上５００名未満</label>
+                                    </div> </div>
+                                    <div class="field"> <div class="ui radio checkbox">
+                                        <input type="radio" name="companySize" id="companySize500" th:field="${form.companySize}" value="" th:checked="${form.companySize}=='500'"/>
+                                        <label for="companySize500">５００名以上</label>
+                                    </div> </div>
+                                </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">

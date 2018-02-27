@@ -1,3 +1,12 @@
+html {
+    /*
+     * フォントサイズはルート要素のhtmlタグからの相対値で指定されている
+     * デフォルトの値は16px
+     * この値を大きくすることで，文字のフォントサイズを全体的に大きくできる
+     */
+    font-size: 20px;
+}
+
 body {
     background: #f9f9f9 url('../img/background.jpg') no-repeat;
     background-size: cover;
@@ -22,7 +31,8 @@ a.logo {
 
 div.center.column {
     text-align: left;
-    max-width: 650px;
+    /* 表示領域の幅 */
+    max-width: 1000px;
 }
 
 .statement {
@@ -116,3 +126,4 @@ ul.label {
 .photo-show:hover img {
     animation-play-state: paused;
 }
+

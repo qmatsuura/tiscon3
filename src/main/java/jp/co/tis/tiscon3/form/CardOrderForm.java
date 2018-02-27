@@ -23,10 +23,27 @@ public class CardOrderForm extends FormBase {
     @Pattern(regexp = "^[a-zA-Z 　]*$")
     private String alphabetName;
 
+    /*生年月日元データ
     @NotBlank
     @Size(max = 10)
     @Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
     private String dateOfBirth;
+    */
+
+    @NotBlank
+    @Size(max = 10)
+    @Pattern(regexp = "\\d{4}$")
+    private String dateOfYear;
+
+    @NotBlank
+    @Size(max = 10)
+    @Pattern(regexp = "\\d{1,2}$")
+    private String dateOfMonth;
+
+    @NotBlank
+    @Size(max = 10)
+    @Pattern(regexp = "\\d{1,2}$")
+    private String dateOfDay;
 
     @NotBlank
     @Size(max = 6)

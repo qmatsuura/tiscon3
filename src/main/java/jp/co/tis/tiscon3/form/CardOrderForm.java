@@ -25,12 +25,12 @@ public class CardOrderForm extends FormBase {
 
     //@NotBlank
     @Size(max = 45)
-    @Pattern(regexp = "^[ァ-ヶー 　]*$")
+    @Pattern(regexp = "^[ァ-ヶー]*$")
     private String kanaName1;
 
     //@NotBlank
     @Size(max = 45)
-    @Pattern(regexp = "^[ァ-ヶー 　]*$")
+    @Pattern(regexp = "^[ァ-ヶー]*$")
     private String kanaName2;
 
     /* 名前(ローマ字) */
@@ -38,12 +38,12 @@ public class CardOrderForm extends FormBase {
 
     //@NotBlank
     @Size(max = 60)
-    @Pattern(regexp = "^[a-zA-Z 　]*$")
+    @Pattern(regexp = "^[a-zA-Z]*$")
     private String alphabetName1;
 
     //@NotBlank
     @Size(max = 60)
-    @Pattern(regexp = "^[a-zA-Z 　]*$")
+    @Pattern(regexp = "^[a-zA-Z]*$")
     private String alphabetName2;
 
     /* 生年月日 */
@@ -180,8 +180,6 @@ public class CardOrderForm extends FormBase {
     private String employerAddress;
 
     /* お勤め先電話番号 */
-    @Size(max = 13)
-    @Pattern(regexp = "^(0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4})?$")
     private String employerPhoneNumber;
 
     @Size(max = 4)

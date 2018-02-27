@@ -62,16 +62,16 @@
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                 <label>業種</label>
                                 <select class="ui selection dropdown" name="industryType">
-                                    <option value="農林水鉱">農業・林業・水産業・鉱業</option>
-                                    <option value="建築不動産">建設・不動産業</option>
-                                    <option value="製造">製造業</option>
-                                    <option value="卸小売流通">卸売業・小売・その他流通業</option>
-                                    <option value="金融保険">金融・保険業</option>
-                                    <option value="運輸通信">運輸・通信業</option>
-                                    <option value="電気ガス">電気・ガス業</option>
-                                    <option value="官公庁">官公庁</option>
-                                    <option value="サービス">その他サービス業</option>
-                                    <option value="その他">その他・不明</option>
+                                    <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業</option>
+                                    <option th:selected="${form.industryType}=='建築不動産'" value="建築不動産">建設・不動産業</option>
+                                    <option th:selected="${form.industryType}=='製造'" value="製造">製造業</option>
+                                    <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業</option>
+                                    <option th:selected="${form.industryType}=='金融保険'" value="金融保険">金融・保険業</option>
+                                    <option th:selected="${form.industryType}=='運輸通信'" value="運輸通信">運輸・通信業</option>
+                                    <option th:selected="${form.industryType}=='電気ガス'" value="電気ガス">電気・ガス業</option>
+                                    <option th:selected="${form.industryType}=='官公庁'" value="官公庁">官公庁</option>
+                                    <option th:selected="${form.industryType}=='サービス'" value="サービス">その他サービス業</option>
+                                    <option th:selected="${form.industryType}=='その他'" value="その他">その他・不明</option>
                                 </select>
                             </div>
 

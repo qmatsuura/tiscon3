@@ -64,12 +64,12 @@ public class CardOrderForm extends FormBase {
     /* 郵便番号 */
     //@NotBlank
     @Size(max = 3)
-    @Pattern(regexp = "^[0-9]{3}$")
+    //@Pattern(regexp = "^[0-9]{3}$")
     private String zipCode1;
 
     //@NotBlank
     @Size(max = 4)
-    @Pattern(regexp = "^[0-9]{4}$")
+    //@Pattern(regexp = "^[0-9]{4}$")
     private String zipCode2;
 
     /* 住所 */
@@ -80,17 +80,17 @@ public class CardOrderForm extends FormBase {
     /* 自宅電話番号 */
     //@NotBlank
     @Size(max = 4)
-    @Pattern(regexp = "^0[0-9]{1,3}$")
+    //@Pattern(regexp = "^0[0-9]{1,3}$")
     private String homePhoneNumber1;
 
     //@NotBlank
     @Size(max = 4)
-    @Pattern(regexp = "^[0-9]{2,4}$")
+    //@Pattern(regexp = "^[0-9]{2,4}$")
     private String homePhoneNumber2;
 
     //@NotBlank
     @Size(max = 4)
-    @Pattern(regexp = "^[0-9]{4}$")
+    //@Pattern(regexp = "^[0-9]{4}$")
     private String homePhoneNumber3;
 
     /* 携帯電話番号 */

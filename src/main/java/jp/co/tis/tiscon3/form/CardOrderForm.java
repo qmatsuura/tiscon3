@@ -10,7 +10,7 @@ public class CardOrderForm extends FormBase {
     private static final long serialVersionUID = 1L;
 
     /* 名前(漢字) */
-    private String kanjiName;
+    // private String kanjiName;
 
     //@NotBlank
     @Size(max = 30)
@@ -221,4 +221,68 @@ public class CardOrderForm extends FormBase {
     @Pattern(regexp = "[0-9]*")
     private String employeeLength;
 
+    /*
+     * データベースに格納可能な形に変換するためには，従来のフォームの内容と形式を合わせる必要がある
+     * その小細工を以降でしている
+     */
+    public String getKanjiName() {
+        if (kanjiName1 == null || kanjiName2 == null) {
+            return null;
+        }
+        return kanjiName1 + " " + kanjiName2;
+    }
+    public String getKanaName() {
+        if (kanaName1 == null || kanaName1 == null) {
+            return null;
+        }
+        return kanaName1 + " " + kanaName2;
+    }
+    public String getAlphabetName() {
+        if (alphabetName1 == null || alphabetName2 == null) {
+            return null;
+        }
+        return alphabetName1 + " " + alphabetName2;
+    }
+    public String getDateOfBirth() {
+        if (dateOfBirth1 == null || dateOfBirth2 == null || dateOfBirth3 == null) {
+            return null;
+        }
+        return dateOfBirth1 + "/" + dateOfBirth2 + "/" + dateOfBirth3;
+    }
+    public String getZipCode() {
+        if (zipCode1 == null || zipCode2 == null) {
+            return null;
+        }
+        return zipCode1 + "-" + zipCode2;
+    }
+    public String getHomePhoneNumber() {
+        if (homePhoneNumber1 == null || homePhoneNumber2 == null || homePhoneNumber3 == null) {
+            return null;
+        }
+        return homePhoneNumber1 + "-" + homePhoneNumber2 + "-" + homePhoneNumber3;
+    }
+    public String getMobilePhoneNumber() {
+        if (mobilePhoneNumber1 == null || mobilePhoneNumber1 == null || mobilePhoneNumber3 == null) {
+            return null;
+        }
+        return mobilePhoneNumber1 + "-" + mobilePhoneNumber2 + "-" + mobilePhoneNumber3;
+    }
+    public String getEmailAddress() {
+        if (emailAddress1 == null || emailAddress2 == null) {
+            return null;
+        }
+        return emailAddress1 + "@" + emailAddress2;
+    }
+    public String getEmployerZipCode() {
+        if (employerZipCode1 == null || employerZipCode2 == null) {
+            return null;
+        }
+        return employerZipCode1 + "-" + employerZipCode2;
+    }
+    public String getEmployerPhoneNumber() {
+        if (employerPhoneNumber1 == null || employerPhoneNumber2 == null || employerPhoneNumber3 == null) {
+            return null;
+        }
+        return employerPhoneNumber1 + "-" + employerPhoneNumber2 + "-" + employerPhoneNumber3;
+    }
 }

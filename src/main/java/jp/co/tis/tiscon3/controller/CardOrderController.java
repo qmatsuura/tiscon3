@@ -47,12 +47,18 @@ public class CardOrderController {
         return templateEngine.render("cardOrder/user", "form", new CardOrderForm());
     }
 
+
     /**
      * お勤め先登録ページを表示します.
      *
      * @return お勤め先登録ページresponse
      */
     public HttpResponse inputJob(CardOrderForm form) {
+        // 職業の情報の入力が必要のない職業の場合は，登録処理に飛ばす
+        if (!needsInputJob(form.getJob())) {
+            return create(form);
+        }
+
         // エラーを出したくないので強制的にエラーを消す.
         form.setErrors(null);
 
@@ -97,4 +103,33 @@ public class CardOrderController {
         return templateEngine.render("cardOrder/completed");
     }
 
+    /**
+     * お勤め先登録が必要なご職業か判定します．
+     * 未知の職業(null, 空文字列を含む)に対してはtrue．
+     *
+     * @param job ご職業名
+     * @return お勤め先登録が必要かどうか
+     */
+    private static boolean needsInputJob(final String job){
+        if (job == null) {
+            return true;
+        }
+
+        switch(job) {
+            case "経営自営":
+            case "会社員":
+            case "契約派遣":
+            case "公務員":
+            case "民間団体":
+            case "他有職":
+                return true;
+            case "主婦":
+            case "学生":
+            case "年金受給":
+            case "パートアルバイト":
+            case "他無職":
+                return false;
+        }
+        return true;
+    }
 }

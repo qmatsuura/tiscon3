@@ -28,15 +28,15 @@
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
-                                <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                <input type="text" name="kanjiName" th:value="${form.kanjiName}" placeholder="山田　太郎"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
-                                <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                <input type="text" name="kanaName" th:value="${form.kanaName}"placeholder="ヤマダ　タロウ"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
-                                <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
+                                <input type="text" name="alphabetName" th:value="${form.alphabetName}"placeholder="Yamada　Taro"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <label>性別</label>
@@ -45,27 +45,27 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
                                 <label>生年月日</label>
-                                <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+                                <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"placeholder="1996/01/01"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号</label>
-                                <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"placeholder="123-4567"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
-                                <input type="text" name="address" th:value="${form.address}"/>
+                                <input type="text" name="address" th:value="${form.address}"placeholder="東京都新宿区１－２－３"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <label>自宅電話番号</label>
-                                <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"placeholder="012-345-6789"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                 <label>携帯電話番号</label>
-                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
+                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"placeholder="080-1234-5678"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
-                                <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+                                <input type="text" name="emailAddress" th:value="${form.emailAddress}"placeholder="tis.internship@example.ne.jp"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
                                 <label>配偶者有無</label>
@@ -86,11 +86,11 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
                                 <label>ローン等のお借り入れ金額</label>
-                                <input type="text" class="number" name="debt" th:value="${form.debt}"/><span class="unit">万円</span>
+                                <input type="text" class="number" name="debt" th:value="${form.debt}"placeholder="123"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                 <label>昨年の所得</label>
-                                <input type="text" class="number" name="income" th:value="${form.income}"/><span class="unit">万円</span>
+                                <input type="text" class="number" name="income" th:value="${form.income}"placeholder="123"/><span class="unit">万円</span>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                 <label>ご職業</label>

@@ -33,9 +33,19 @@
                                 <input type="text" name="employerName" th:value="${form.employerName}"placeholder="TIS"/>
                             </div>
 
+                            <!-- 複数の自由記入フォームを横並びにする例 -->
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
                                 <label>お勤め先郵便番号</label>
-                                <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"placeholder="123-4567"/>
+                                <div class="ui fields"> <!-- フォームを横に並べる -->
+                                    <p>〒</p>
+                                    <div class="three wide field"> <!-- フォームの横幅を決める -->
+                                        <input type="text" name="employerZipCode1" th:value="${form.employerZipCode1}"placeholder="123"/>
+                                    </div>
+                                    <p>ー</p>
+                                    <div class="four wide field">
+                                        <input type="text" name="employerZipCode2" th:value="${form.employerZipCode2}"placeholder="4567"/>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">

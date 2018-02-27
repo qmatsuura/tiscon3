@@ -6,6 +6,7 @@ import enkan.endpoint.ResourceEndpoint;
 import enkan.middleware.*;
 import enkan.middleware.devel.*;
 import enkan.middleware.doma2.DomaTransactionMiddleware;
+import jp.co.tis.tiscon3.controller.DbDumpController;
 import kotowari.middleware.*;
 import kotowari.middleware.serdes.ToStringBodyWriter;
 import enkan.system.inject.ComponentInjector;
@@ -27,6 +28,7 @@ public class ApplicationConfiguration implements enkan.config.ApplicationFactory
             r.post("/cardOrder/user").to(CardOrderController.class, "inputJob");
             r.post("/cardOrder/modify").to(CardOrderController.class, "modifyUser");
             r.get("/cardOrder/completed").to(CardOrderController.class, "completed");
+            r.get("/db_dump").to(DbDumpController.class, "get");
             r.resource(CardOrderController.class);
         }).compile();
 

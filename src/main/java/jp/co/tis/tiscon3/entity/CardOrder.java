@@ -6,12 +6,14 @@ import org.seasar.doma.GeneratedValue;
 import org.seasar.doma.GenerationType;
 import org.seasar.doma.Id;
 import org.seasar.doma.Table;
+import lombok.ToString;
 
 /**
  *
  */
 @Entity
 @Table(name = "CARD_ORDER")
+@ToString
 public class CardOrder {
 
     /**  */

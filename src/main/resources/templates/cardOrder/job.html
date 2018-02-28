@@ -61,8 +61,22 @@
 
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                 <label>お勤め先電話番号</label>
-                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"
-                                       placeholder="123-456-7890"/>
+                                <div class="ui fields">
+                                    <div class="five wide field">
+                                        <input type="text" name="employerPhoneNumber1" th:value="${form.employerPhoneNumber1}"
+                                               placeholder="123"/>
+                                    </div>
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="employerPhoneNumber2" th:value="${form.employerPhoneNumber2}"
+                                               placeholder="456"/>
+                                    </div>
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="employerPhoneNumber3" th:value="${form.employerPhoneNumber3}"
+                                               placeholder="7890"/>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- ドロップダウンリストを使う例 -->

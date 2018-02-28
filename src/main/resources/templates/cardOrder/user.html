@@ -6,6 +6,7 @@
     <title>新規作成</title>
 
     <script src="/assets/js/metrixir.client.js"></script>
+    <script src="/assets/js/validation.js"></script>
 </head>
 <body>
 <div class="full height image" layout:fragment="content">
@@ -31,7 +32,7 @@
 
                                 <div class="field" th:classappend="${form.hasErrors('kanjiName1')} ? 'error'">
                                     <label>苗字（漢字）</label>
-                                    <input type="text" name="kanjiName1" th:value="${form.kanjiName1}" placeholder="山田"/>
+                                    <input type="text" name="kanjiName1" th:value="${form.kanjiName1}" placeholder="山田" onchange="validateKanjiName1()"/>
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('kanjiName2')} ? 'error'">
@@ -91,16 +92,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--見本用コピペ
-                            <select class="ui selection dropdown" name="job">
-                               <option th:selected="${form.job}==''" value="">
-                                    選択してください
-                                </option>
-                                -->
+
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
                                 <label>生年月日</label>
-                                <div class="three fields">
-                                    <select class="ui selection dropdown" name="'dateOfBirth1">
+                                <!--<div class="three fields">-->
+                                    <select class="ui selection dropdown" name="dateOfBirth1">
                                         <option value="選択してください">選択してください</option>
                                         <option value="2001">2001年</option>
                                         <option value="2000">2000年</option>
@@ -236,8 +232,7 @@
                                         <option value="30">30日</option>
                                         <option value="31">31日</option>
                                     </select>
-                                    <!--生年月日元データ<input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"-->
-                                </div>
+                                <!--</div>-->
                             </div>
 
                             <!--住所変更-->
@@ -370,34 +365,8 @@
                                     <option th:selected="${form.houseClassification}=='その他'" value="その他">
                                         その他
                                     </option>
-                                    <!--<input type="radio" name="houseClassification" value="家族所有" th:checked="${form.houseClassification}=='家族所有'"/>家族名義の一戸建・マンション
-                                    <input type="radio" name="houseClassification" value="社宅" th:checked="${form.houseClassification}=='社宅'"/>社宅
-                                    <input type="radio" name="houseClassification" value="公営" th:checked="${form.houseClassification}=='公営'"/>公営住宅
-                                    <input type="radio" name="houseClassification" value="賃貸" th:checked="${form.houseClassification}=='賃貸'"/>賃貸マンション
-                                    <input type="radio" name="houseClassification" value="借家" th:checked="${form.houseClassification}=='借家'"/>借家
-                                    <input type="radio" name="houseClassification" value="アパート" th:checked="${form.houseClassification}=='アパート'"/>アパート
-                                    <input type="radio" name="houseClassification" value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'"/>寮・下宿
-                                    <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
-
-                                    !-->
                                 </select>
                             </div>
-
-                            <!--<div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
-                                <label>業種</label>
-                                <select class="ui selection dropdown" name="industryType">
-                                    <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業</option>
-                                    <option th:selected="${form.industryType}=='建築不動産'" value="建築不動産">建設・不動産業</option>
-                                    <option th:selected="${form.industryType}=='製造'" value="製造">製造業</option>
-                                    <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業</option>
-                                    <option th:selected="${form.industryType}=='金融保険'" value="金融保険">金融・保険業</option>
-                                    <option th:selected="${form.industryType}=='運輸通信'" value="運輸通信">運輸・通信業</option>
-                                    <option th:selected="${form.industryType}=='電気ガス'" value="電気ガス">電気・ガス業</option>
-                                    <option th:selected="${form.industryType}=='官公庁'" value="官公庁">官公庁</option>
-                                    <option th:selected="${form.industryType}=='サービス'" value="サービス">その他サービス業</option>
-                                    <option th:selected="${form.industryType}=='その他'" value="その他">その他・不明</option>
-                                </select>
-                            </div>-->
 
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
                                 <label>ローン等のお借り入れ金額</label>
@@ -446,7 +415,7 @@
                                         その他（有職）
                                     </option>
                                     <option th:selected="${form.job}=='他無職'" value="他無職">
-                                        その他（有職）
+                                        その他（無職）
                                     </option>
                                 </select>
                                 <!--

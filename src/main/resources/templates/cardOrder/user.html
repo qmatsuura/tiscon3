@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
 
-
+                                </div>
 
 
 
@@ -255,38 +255,49 @@
 
 
                                     <!--電話番号変更-->
-
-
-                                    <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
-                                        <label>自宅電話番号</label>
-
-
-                                        <div class="ui fields">
-
-                                            <div class="five wide field">
-
+                                <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
+                                    <label>自宅電話番号</label>
+                                    <div class="ui fields">
+                                        <div class="five wide field">
                                                 <input type="text" name="homePhoneNumber1"
                                                        th:value="${form.homePhoneNumber1}" placeholder="012"/>
-
-
-                                                <p>―</p>
-                                                <input type="text" name="homePhoneNumber2"
-                                                       th:value="${form.homePhoneNumber2}" placeholder="345"/>
-
-
-                                                <p>―</p>
-
+                                        </div>
+                                        <p>―</p>
+                                        <div class="five wide field">
+                                            <input type="text" name="homePhoneNumber2"
+                                                   th:value="${form.homePhoneNumber2}" placeholder="345"/>
+                                        </div>
+                                        <p>―</p>
+                                        <div class="five wide field">
                                                 <input type="text" name="homePhoneNumber3"
                                                        th:value="${form.homePhoneNumber3}" placeholder="6789"/>
-                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
+                                    <label>携帯電話番号(任意)</label>
+
+                                    <div class="ui fields">
+                                        <div class="five wide field">
+                                            <input type="text" name="mobilePhoneNumber1"
+                                            th:value="${form.mobilePhoneNumber1}" placeholder="012"/>
+                                        </div>
+                                        <p>―</p>
+                                        <div class="five wide field">
+                                            <input type="text" name="mobilePhoneNumber2"
+                                            th:value="${form.mobilePhoneNumber2}" placeholder="345"/>
+                                        </div>
+                                        <p>―</p>
+                                        <div class="five wide field">
+                                            <input type="text" name="mobilePhoneNumber3"
+                                            th:value="${form.mobilePhoneNumber3}" placeholder="6789"/>
                                         </div>
                                     </div>
 
 
-                                    <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
-                                <label>携帯電話番号</label>
-                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"placeholder="080-1234-5678"/>
-                            </div>
+                                </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                     <label>メールアドレス</label>

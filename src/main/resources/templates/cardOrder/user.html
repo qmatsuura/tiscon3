@@ -297,8 +297,17 @@
 
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
-                                <input type="text" name="emailAddress" th:value="${form.emailAddress}"
-                                       placeholder="tis.internship@example.ne.jp"/>
+                                <div class="ui fields">
+                                    <div class="six wide field">
+                                        <input type="text" name="emailAddress1" th:value="${form.emailAddress1}"
+                                               placeholder="tis.internship"/>
+                                    </div>
+                                    <p>＠</p>
+                                    <div class="six wide field">
+                                        <input type="text" name="emailAddress2" th:value="${form.emailAddress2}"
+                                               placeholder="example.ne.jp"/>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">

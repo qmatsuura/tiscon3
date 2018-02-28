@@ -10,87 +10,87 @@ public class CardOrderForm extends FormBase {
     private static final long serialVersionUID = 1L;
 
     /* 名前(漢字) */
-    //@NotBlank
+    @NotBlank
     @Size(max = 30)
     private String kanjiName1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 30)
     private String kanjiName2;
 
     /* 名前（カナ） */
-    //@NotBlank
+    @NotBlank
     @Size(max = 45)
     @Pattern(regexp = "^[ァ-ヶー]*$")
     private String kanaName1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 45)
     @Pattern(regexp = "^[ァ-ヶー]*$")
     private String kanaName2;
 
     /* 名前(ローマ字) */
-    //@NotBlank
+    @NotBlank
     @Size(max = 60)
     @Pattern(regexp = "^[a-zA-Z]*$")
     private String alphabetName1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 60)
     @Pattern(regexp = "^[a-zA-Z]*$")
     private String alphabetName2;
 
     /* 生年月日 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
     @Pattern(regexp = "^\\d{4}$")
     private String dateOfBirth1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 2)
     @Pattern(regexp = "^\\d{1,2}$")
     private String dateOfBirth2;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 2)
     @Pattern(regexp = "^\\d{1,2}$")
     private String dateOfBirth3;
 
     /* 性別 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 6)
     private String gender;
 
     /* 郵便番号 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 3)
-    //@Pattern(regexp = "^[0-9]{3}$")
+    @Pattern(regexp = "^[0-9]{3}$")
     private String zipCode1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
-    //@Pattern(regexp = "^[0-9]{4}$")
+    @Pattern(regexp = "^[0-9]{4}$")
     private String zipCode2;
 
     /* 住所 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 255)
     private String address;
 
     /* 自宅電話番号 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
-    //@Pattern(regexp = "^0[0-9]{1,3}$")
+    @Pattern(regexp = "^0[0-9]{1,3}$")
     private String homePhoneNumber1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
-    //@Pattern(regexp = "^[0-9]{2,4}$")
+    @Pattern(regexp = "^[0-9]{2,4}$")
     private String homePhoneNumber2;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
-    //@Pattern(regexp = "^[0-9]{4}$")
+    @Pattern(regexp = "^[0-9]{4}$")
     private String homePhoneNumber3;
 
     /* 携帯電話番号 */
@@ -107,37 +107,37 @@ public class CardOrderForm extends FormBase {
     private String mobilePhoneNumber3;
 
     /* メールアドレス */
-    //@NotBlank
+    @NotBlank
     @Size(max = 127)
     private String emailAddress1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 127)
     private String emailAddress2;
 
     /* 配偶者の有無 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 20)
     private String spouse;
 
     /* お住まい */
-    //@NotBlank
+    @NotBlank
     @Size(max = 20)
     private String houseClassification;
 
     /* ローン */
-    //@NotBlank
+    @NotBlank
     @Size(max = 6)
     @Pattern(regexp = "[0-9]*")
     private String debt;
 
     /* ご職業 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 120)
     private String job;
 
     /* 昨年の所得 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 6)
     @Pattern(regexp = "[0-9]*")
     private String income;
@@ -147,12 +147,12 @@ public class CardOrderForm extends FormBase {
     private String employerName;
 
     /* お勤め先郵便番号 */
-    //@NotBlank
+    @NotBlank
     @Size(max = 3)
     @Pattern(regexp = "^([0-9]{3})?$")
     private String employerZipCode1;
 
-    //@NotBlank
+    @NotBlank
     @Size(max = 4)
     @Pattern(regexp = "^([0-9]{4})?$")
     private String employerZipCode2;

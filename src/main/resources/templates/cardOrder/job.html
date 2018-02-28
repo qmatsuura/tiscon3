@@ -26,11 +26,14 @@
 
                             <div class="ui horizontal divider">お勤め先について</div>
 
-                            <div class="ui statement">ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方は、以下の項目をご入力ください。</div>
+                            <div class="ui statement">
+                                ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方は、以下の項目をご入力ください。
+                            </div>
 
                             <div class="field" th:classappend="${form.hasErrors('employerName')} ? 'error'">
                                 <label>お勤め先名</label>
-                                <input type="text" name="employerName" th:value="${form.employerName}"placeholder="TIS"/>
+                                <input type="text" name="employerName" th:value="${form.employerName}"
+                                       placeholder="TIS"/>
                             </div>
 
                             <!-- 複数の自由記入フォームを横並びにする例 -->
@@ -39,33 +42,39 @@
                                 <div class="ui fields"> <!-- フォームを横に並べる -->
                                     <p>〒</p>
                                     <div class="three wide field"> <!-- フォームの横幅を決める -->
-                                        <input type="text" name="employerZipCode1" th:value="${form.employerZipCode1}"placeholder="123"/>
+                                        <input type="text" name="employerZipCode1" th:value="${form.employerZipCode1}"
+                                               placeholder="123"/>
                                     </div>
                                     <p>ー</p>
                                     <div class="four wide field">
-                                        <input type="text" name="employerZipCode2" th:value="${form.employerZipCode2}"placeholder="4567"/>
+                                        <input type="text" name="employerZipCode2" th:value="${form.employerZipCode2}"
+                                               placeholder="4567"/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
-                                <input type="text" name="employerAddress" th:value="${form.employerAddress}"placeholder="東京都新宿区１－２－３"/>
+                                <input type="text" name="employerAddress" th:value="${form.employerAddress}"
+                                       placeholder="東京都新宿区１－２－３"/>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                 <label>お勤め先電話番号</label>
-                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"placeholder="123-456-7890"/>
+                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"
+                                       placeholder="123-456-7890"/>
                             </div>
 
                             <!-- ドロップダウンリストを使う例 -->
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                 <label>業種</label>
                                 <select class="ui selection dropdown" name="industryType">
-                                    <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業</option>
+                                    <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業
+                                    </option>
                                     <option th:selected="${form.industryType}=='建築不動産'" value="建築不動産">建設・不動産業</option>
                                     <option th:selected="${form.industryType}=='製造'" value="製造">製造業</option>
-                                    <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業</option>
+                                    <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業
+                                    </option>
                                     <option th:selected="${form.industryType}=='金融保険'" value="金融保険">金融・保険業</option>
                                     <option th:selected="${form.industryType}=='運輸通信'" value="運輸通信">運輸・通信業</option>
                                     <option th:selected="${form.industryType}=='電気ガス'" value="電気ガス">電気・ガス業</option>
@@ -77,61 +86,119 @@
 
                             <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
                                 <label>資本金</label>
-                                <input type="radio" name="capital" value="999" th:checked="${form.capital}=='999'"/>１千万円未満
-                                <input type="radio" name="capital" value="4999" th:checked="${form.capital}=='4999'"/>１千万円以上５千万円未満
-                                <input type="radio" name="capital" value="29999" th:checked="${form.capital}=='29999'"/>５千万円以上３億円未満
-                                <input type="radio" name="capital" value="30000" th:checked="${form.capital}=='30000'"/>３億円以上
-                                <input type="radio" name="capital" value="0" th:checked="${form.capital}=='0'"/>その他
+                                <div class="inline fields">
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="capital" value="999" id="capital999"
+                                                   th:checked="${form.capital}=='999'"/>
+                                            <label for="capital999">１千万円未満</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="capital" value="4999" id="capital4999"
+                                                   th:checked="${form.capital}=='4999'"/>
+                                            <label for="capital4999">１千万円以上５千万円未満</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="inline fields">
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="capital" value="29999" id="capital29999"
+                                                   th:checked="${form.capital}=='29999'"/>
+                                            <label for="capital29999">５千万円以上３億円未満</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="capital" value="30000" id="capital30000"
+                                                   th:checked="${form.capital}=='30000'"/>
+                                            <label for="capital30000">３億円以上</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline fields">
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="capital" id="capital0" value="0"
+                                               th:checked="${form.capital}=='0'"/>
+                                        <label for="capital0">その他</label>　　　
+                                    </div>
+                                </div>
+                                </div>
+
                             </div>
 
                             <!-- ラジオボタンを配置する例 -->
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                 <label>お勤め先の規模（従業員数）</label>
                                 <div class="inline fields"> <!-- この中に記述したものが一行で表示される -->
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <!-- idは固有の名前をつける -->
-                                        <input type="radio" name="companySize" id="companySize9" value="9" th:checked="${form.companySize}=='9'"/>
-                                        <!-- forにidを指定する ラベルのクリックで選択できるようになる -->
-                                        <label for="companySize9">１０名未満</label>
-                                    </div> </div>
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <input type="radio" name="companySize" id="companySize29" value="29" th:checked="${form.companySize}=='29'"/>
-                                        <label for="companySize29">１０名以上３０名未満</label>
-                                    </div> </div>
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <input type="radio" name="companySize" id="companySize49" value="49" th:checked="${form.companySize}=='49'"/>
-                                        <label for="companySize49">３０名以上５０名未満</label>
-                                    </div> </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <!-- idは固有の名前をつける -->
+                                            <input type="radio" name="companySize" id="companySize9" value="9"
+                                                   th:checked="${form.companySize}=='9'"/>
+                                            <!-- forにidを指定する ラベルのクリックで選択できるようになる -->
+                                            <label for="companySize9">１０名未満</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="companySize" id="companySize29" value="29"
+                                                   th:checked="${form.companySize}=='29'"/>
+                                            <label for="companySize29">１０名以上３０名未満</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="companySize" id="companySize49" value="49"
+                                                   th:checked="${form.companySize}=='49'"/>
+                                            <label for="companySize49">３０名以上５０名未満</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="inline fields">
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <input type="radio" name="companySize" id="companySize99" value="99" th:checked="${form.companySize}=='99'"/>
-                                        <label for="companySize99">５０名以上１００名未満</label>
-                                    </div> </div>
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <input type="radio" name="companySize" id="companySize499" value="499" th:checked="${form.companySize}=='499'"/>
-                                        <label for="companySize499">１００名以上５００名未満</label>
-                                    </div> </div>
-                                    <div class="field"> <div class="ui radio checkbox">
-                                        <input type="radio" name="companySize" id="companySize500" value="500" th:checked="${form.companySize}=='500'"/>
-                                        <label for="companySize500">５００名以上</label>
-                                    </div> </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="companySize" id="companySize99" value="99"
+                                                   th:checked="${form.companySize}=='99'"/>
+                                            <label for="companySize99">５０名以上１００名未満</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="companySize" id="companySize499" value="499"
+                                                   th:checked="${form.companySize}=='499'"/>
+                                            <label for="companySize499">１００名以上５００名未満</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" name="companySize" id="companySize500" value="500"
+                                                   th:checked="${form.companySize}=='500'"/>
+                                            <label for="companySize500">５００名以上</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
                                 <label>所属部署</label>
-                                <input type="text" name="department" th:value="${form.department}"placeholder="ADC"/>
+                                <input type="text" name="department" th:value="${form.department}" placeholder="ADC"/>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
                                 <label>役職</label>
-                                <input type="text" name="position" th:value="${form.position}"placeholder="社長"/>
+                                <input type="text" name="position" th:value="${form.position}" placeholder="社長"/>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                 <label>勤続年数</label>
-                                <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"placeholder="10"/><span class="unit">年</span >
+                                <input type="text" class="number" name="employeeLength"
+                                       th:value="${form.employeeLength}" placeholder="10"/><span class="unit">年</span>
                             </div>
 
                             <!--/*"ご本人"の入力値を引き回すための隠し項目*/-->
@@ -164,7 +231,9 @@
                             <div class="ui column grid">
                                 <div class="eight wide column left aligned">
                                     <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
-                                    <button class="ui button angle left icon" onclick="form.action='/cardOrder/modify';return true">戻る</button>
+                                    <button class="ui button angle left icon"
+                                            onclick="form.action='/cardOrder/modify';return true">戻る
+                                    </button>
                                 </div>
                                 <div class="eight wide column right aligned">
                                     <button class="ui teal button angle right icon">カードを申し込む</button>

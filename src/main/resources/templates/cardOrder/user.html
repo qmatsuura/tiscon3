@@ -29,10 +29,10 @@
 
                             <div class="two fields">
 
-                            <div class="field" th:classappend="${form.hasErrors('kanjiName1')} ? 'error'">
-                                <label>苗字（漢字）</label>
-                                <input type="text" name="kanjiName" th:value="${form.kanjiName1}" placeholder="山田"/>
-                            </div>
+                                <div class="field" th:classappend="${form.hasErrors('kanjiName1')} ? 'error'">
+                                    <label>苗字（漢字）</label>
+                                    <input type="text" name="kanjiName" th:value="${form.kanjiName1}" placeholder="山田"/>
+                                </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('kanjiName2')} ? 'error'">
                                     <label>名前（漢字）</label>
@@ -46,10 +46,10 @@
 
                             <div class="two fields">
 
-                            <div class="field" th:classappend="${form.hasErrors('kanaName1')} ? 'error'">
-                                <label>苗字（カナ）</label>
-                                <input type="text" name="kanaName" th:value="${form.kanaName1}"placeholder="ヤマダ"/>
-                            </div>
+                                <div class="field" th:classappend="${form.hasErrors('kanaName1')} ? 'error'">
+                                    <label>苗字（カナ）</label>
+                                    <input type="text" name="kanaName" th:value="${form.kanaName1}"placeholder="ヤマダ"/>
+                                </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('kanaName2')} ? 'error'">
                                     <label>名前（カナ）</label>
@@ -63,15 +63,15 @@
 
                             <div class="two fields">
 
-                            <div class="field" th:classappend="${form.hasErrors('alphabetName1')} ? 'error'">
-                                <label>Last name</label>
-                                <input type="text" name="alphabetName" th:value="${form.alphabetName1}"placeholder="Yamada"/>
-                            </div>
+                                <div class="field" th:classappend="${form.hasErrors('alphabetName1')} ? 'error'">
+                                    <label>Last name</label>
+                                    <input type="text" name="alphabetName" th:value="${form.alphabetName1}"placeholder="Yamada"/>
+                                </div>
 
-                            <div class="field" th:classappend="${form.hasErrors('alphabetName2')} ? 'error'">
-                                <label>Fast name</label>
-                                <input type="text" name="alphabetName" th:value="${form.alphabetName2}"placeholder="Taro"/>
-                            </div>
+                                <div class="field" th:classappend="${form.hasErrors('alphabetName2')} ? 'error'">
+                                    <label>Fast name</label>
+                                    <input type="text" name="alphabetName" th:value="${form.alphabetName2}"placeholder="Taro"/>
+                                </div>
                             </div>
 
 
@@ -229,16 +229,10 @@
                                     </select>
                                     <!--生年月日元データ<input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"-->
                                 </div>
-                            <div>
+                            </div>
 
-
-
-                                <!--住所変更-->
-
-
-
-                                <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
-
+                            <!--住所変更-->
+                            <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号</label>
                                 <div class="fields">
                                     <p>〒</p>
@@ -250,11 +244,7 @@
                                         <input type="text"   name="zipcode2" th:value="${form.zipcode2}"placeholder="4567"/>
                                     </div>
                                 </div>
-
-                                </div>
-
-
-
+                            </div>
 
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
@@ -262,124 +252,122 @@
                             </div>
 
 
-                                    <!--電話番号変更-->
-                                <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
-                                    <label>自宅電話番号</label>
-                                    <div class="ui fields">
-                                        <div class="five wide field">
-                                                <input type="text" name="homePhoneNumber1"
-                                                       th:value="${form.homePhoneNumber1}" placeholder="012"/>
-                                        </div>
-                                        <p>―</p>
-                                        <div class="five wide field">
-                                            <input type="text" name="homePhoneNumber2"
-                                                   th:value="${form.homePhoneNumber2}" placeholder="345"/>
-                                        </div>
-                                        <p>―</p>
-                                        <div class="five wide field">
-                                                <input type="text" name="homePhoneNumber3"
-                                                       th:value="${form.homePhoneNumber3}" placeholder="6789"/>
-                                        </div>
+                            <!--電話番号変更-->
+                            <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
+                                <label>自宅電話番号</label>
+                                <div class="ui fields">
+                                    <div class="five wide field">
+                                        <input type="text" name="homePhoneNumber1"
+                                               th:value="${form.homePhoneNumber1}" placeholder="012"/>
+                                    </div>
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="homePhoneNumber2"
+                                               th:value="${form.homePhoneNumber2}" placeholder="345"/>
+                                    </div>
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="homePhoneNumber3"
+                                               th:value="${form.homePhoneNumber3}" placeholder="6789"/>
                                     </div>
                                 </div>
+                            </div>
 
 
-                                <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
-                                    <label>携帯電話番号(任意)</label>
+                            <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
+                                <label>携帯電話番号(任意)</label>
 
-                                    <div class="ui fields">
-                                        <div class="five wide field">
-                                            <input type="text" name="mobilePhoneNumber1"
-                                            th:value="${form.mobilePhoneNumber1}" placeholder="012"/>
-                                        </div>
-                                        <p>―</p>
-                                        <div class="five wide field">
-                                            <input type="text" name="mobilePhoneNumber2"
-                                            th:value="${form.mobilePhoneNumber2}" placeholder="345"/>
-                                        </div>
-                                        <p>―</p>
-                                        <div class="five wide field">
-                                            <input type="text" name="mobilePhoneNumber3"
-                                            th:value="${form.mobilePhoneNumber3}" placeholder="6789"/>
-                                        </div>
+                                <div class="ui fields">
+                                    <div class="five wide field">
+                                        <input type="text" name="mobilePhoneNumber1"
+                                               th:value="${form.mobilePhoneNumber1}" placeholder="012"/>
                                     </div>
-
-
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="mobilePhoneNumber2"
+                                               th:value="${form.mobilePhoneNumber2}" placeholder="345"/>
+                                    </div>
+                                    <p>―</p>
+                                    <div class="five wide field">
+                                        <input type="text" name="mobilePhoneNumber3"
+                                               th:value="${form.mobilePhoneNumber3}" placeholder="6789"/>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
-                                    <label>メールアドレス</label>
-                                    <input type="text" name="emailAddress" th:value="${form.emailAddress}"
-                                           placeholder="tis.internship@example.ne.jp"/>
-                                </div>
+                            <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
+                                <label>メールアドレス</label>
+                                <input type="text" name="emailAddress" th:value="${form.emailAddress}"
+                                       placeholder="tis.internship@example.ne.jp"/>
+                            </div>
 
-                                <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
-                                    <label>配偶者有無</label>
-                                    <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
-                                    <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
-                                </div>
+                            <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
+                                <label>配偶者有無</label>
+                                <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
+                                <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
+                            </div>
 
-                                <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">
-                                    <label>お住まい</label>
-                                    <select class="ui selection dropdown" name="houseClassification">
-                                        <option th:selected="${form.houseClassification}==''" value="">
-                                            選択してください
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='自己所有'" value="自己所有">
-                                            本人名義の一戸建・マンション
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='家族所有'" value="家族所有">
-                                            家族名義の一戸建・マンション
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='社宅'" value="社宅">
-                                            社宅
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='公営'" value="公営">
-                                            公営住宅
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='賃貸'" value="賃貸">
-                                            賃貸マンション
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='借家'" value="借家">
-                                            借家
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='アパート'" value="アパート">
-                                            アパート
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='寮下宿'" value="寮下宿">
-                                            寮・下宿
-                                        </option>
-                                        <option th:selected="${form.houseClassification}=='その他'" value="その他">
-                                            その他
-                                        </option>
-                                        <!--<input type="radio" name="houseClassification" value="家族所有" th:checked="${form.houseClassification}=='家族所有'"/>家族名義の一戸建・マンション
-                                        <input type="radio" name="houseClassification" value="社宅" th:checked="${form.houseClassification}=='社宅'"/>社宅
-                                        <input type="radio" name="houseClassification" value="公営" th:checked="${form.houseClassification}=='公営'"/>公営住宅
-                                        <input type="radio" name="houseClassification" value="賃貸" th:checked="${form.houseClassification}=='賃貸'"/>賃貸マンション
-                                        <input type="radio" name="houseClassification" value="借家" th:checked="${form.houseClassification}=='借家'"/>借家
-                                        <input type="radio" name="houseClassification" value="アパート" th:checked="${form.houseClassification}=='アパート'"/>アパート
-                                        <input type="radio" name="houseClassification" value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'"/>寮・下宿
-                                        <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
+                            <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">
+                                <label>お住まい</label>
+                                <select class="ui selection dropdown" name="houseClassification">
+                                    <option th:selected="${form.houseClassification}==''" value="">
+                                        選択してください
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='自己所有'" value="自己所有">
+                                        本人名義の一戸建・マンション
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='家族所有'" value="家族所有">
+                                        家族名義の一戸建・マンション
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='社宅'" value="社宅">
+                                        社宅
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='公営'" value="公営">
+                                        公営住宅
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='賃貸'" value="賃貸">
+                                        賃貸マンション
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='借家'" value="借家">
+                                        借家
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='アパート'" value="アパート">
+                                        アパート
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='寮下宿'" value="寮下宿">
+                                        寮・下宿
+                                    </option>
+                                    <option th:selected="${form.houseClassification}=='その他'" value="その他">
+                                        その他
+                                    </option>
+                                    <!--<input type="radio" name="houseClassification" value="家族所有" th:checked="${form.houseClassification}=='家族所有'"/>家族名義の一戸建・マンション
+                                    <input type="radio" name="houseClassification" value="社宅" th:checked="${form.houseClassification}=='社宅'"/>社宅
+                                    <input type="radio" name="houseClassification" value="公営" th:checked="${form.houseClassification}=='公営'"/>公営住宅
+                                    <input type="radio" name="houseClassification" value="賃貸" th:checked="${form.houseClassification}=='賃貸'"/>賃貸マンション
+                                    <input type="radio" name="houseClassification" value="借家" th:checked="${form.houseClassification}=='借家'"/>借家
+                                    <input type="radio" name="houseClassification" value="アパート" th:checked="${form.houseClassification}=='アパート'"/>アパート
+                                    <input type="radio" name="houseClassification" value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'"/>寮・下宿
+                                    <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
 
-                                        !-->
-                                    </select>
-                                </div>
+                                    !-->
+                                </select>
+                            </div>
 
-                                <!--<div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
-                                    <label>業種</label>
-                                    <select class="ui selection dropdown" name="industryType">
-                                        <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業</option>
-                                        <option th:selected="${form.industryType}=='建築不動産'" value="建築不動産">建設・不動産業</option>
-                                        <option th:selected="${form.industryType}=='製造'" value="製造">製造業</option>
-                                        <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業</option>
-                                        <option th:selected="${form.industryType}=='金融保険'" value="金融保険">金融・保険業</option>
-                                        <option th:selected="${form.industryType}=='運輸通信'" value="運輸通信">運輸・通信業</option>
-                                        <option th:selected="${form.industryType}=='電気ガス'" value="電気ガス">電気・ガス業</option>
-                                        <option th:selected="${form.industryType}=='官公庁'" value="官公庁">官公庁</option>
-                                        <option th:selected="${form.industryType}=='サービス'" value="サービス">その他サービス業</option>
-                                        <option th:selected="${form.industryType}=='その他'" value="その他">その他・不明</option>
-                                    </select>
-                                </div>-->
+                            <!--<div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
+                                <label>業種</label>
+                                <select class="ui selection dropdown" name="industryType">
+                                    <option th:selected="${form.industryType}=='農林水鉱'" value="農林水鉱">農業・林業・水産業・鉱業</option>
+                                    <option th:selected="${form.industryType}=='建築不動産'" value="建築不動産">建設・不動産業</option>
+                                    <option th:selected="${form.industryType}=='製造'" value="製造">製造業</option>
+                                    <option th:selected="${form.industryType}=='卸小売流通'" value="卸小売流通">卸売業・小売・その他流通業</option>
+                                    <option th:selected="${form.industryType}=='金融保険'" value="金融保険">金融・保険業</option>
+                                    <option th:selected="${form.industryType}=='運輸通信'" value="運輸通信">運輸・通信業</option>
+                                    <option th:selected="${form.industryType}=='電気ガス'" value="電気ガス">電気・ガス業</option>
+                                    <option th:selected="${form.industryType}=='官公庁'" value="官公庁">官公庁</option>
+                                    <option th:selected="${form.industryType}=='サービス'" value="サービス">その他サービス業</option>
+                                    <option th:selected="${form.industryType}=='その他'" value="その他">その他・不明</option>
+                                </select>
+                            </div>-->
 
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
                                 <label>ローン等のお借り入れ金額</label>
@@ -398,13 +386,13 @@
                                         選択してください
                                     </option>
                                     <option th:selected="${form.job}=='経営自営'" value="経営自営">
-                                            経営・自営業
+                                        経営・自営業
                                     </option>
                                     <option th:selected="${form.job}=='会社員'" value="会社員">
                                         　　会社員
                                     </option>
                                     <option th:selected="${form.job}=='契約派遣'" value="契約派遣">
-                                            契約・派遣社員
+                                        契約・派遣社員
                                     </option>
                                     <option th:selected="${form.job}=='公務員'" value="公務員">
                                         公務員

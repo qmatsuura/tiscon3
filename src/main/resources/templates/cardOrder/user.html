@@ -82,11 +82,17 @@
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
                                 <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
                             </div>
-
+                            <!--見本用コピペ
+                            <select class="ui selection dropdown" name="job">
+                               <option th:selected="${form.job}==''" value="">
+                                    選択してください
+                                </option>
+                                -->
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
                                 <label>生年月日</label>
                                 <div class="three fields">
-                                    <select name="dateOfBirth1"><!-- テスト。年。-->
+                                    <select class="ui selection dropdown" name="'dateOfBirth1">
+                                        <option value="選択してください">選択してください</option>
                                         <option value="2001">2001</option>
                                         <option value="2000">2000</option>
                                         <option value="1999">1999</option>
@@ -172,6 +178,7 @@
                                     </select>
 
                                     <select name="dateOfBirth2"><!-- テスト。月-->
+                                        <option value="選択してください">選択してください</option>
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>
@@ -187,6 +194,7 @@
                                     </select>
 
                                     <select name="dateOfBirth3"><!-- テスト。日-->
+                                        <option value="選択してください">選択してください</option>
                                         <option value="01">01</option>
                                         <option value="02">02</option>
                                         <option value="03">03</option>

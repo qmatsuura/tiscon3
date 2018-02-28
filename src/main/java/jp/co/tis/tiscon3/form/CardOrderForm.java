@@ -147,12 +147,10 @@ public class CardOrderForm extends FormBase {
     private String employerName;
 
     /* お勤め先郵便番号 */
-    @NotBlank
     @Size(max = 3)
     @Pattern(regexp = "^([0-9]{3})?$")
     private String employerZipCode1;
 
-    @NotBlank
     @Size(max = 4)
     @Pattern(regexp = "^([0-9]{4})?$")
     private String employerZipCode2;

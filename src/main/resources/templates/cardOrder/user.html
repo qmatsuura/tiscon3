@@ -303,8 +303,20 @@
 
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
                                 <label>配偶者有無</label>
-                                <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
-                                <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
+                                <div class="inline fields"> <!-- この中に記述したものが一行で表示される -->
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" id="spouse1" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>
+                                            <label for="spouse1">配偶者あり</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" id="spouse0" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>
+                                            <label for="spouse0">配偶者なし</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">

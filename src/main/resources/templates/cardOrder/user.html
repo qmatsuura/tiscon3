@@ -74,13 +74,22 @@
                                 </div>
                             </div>
 
-
-
-
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <label>性別</label>
-                                <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
-                                <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
+                                <div class="inline fields"> <!-- この中に記述したものが一行で表示される -->
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" id="gender_male" name="gender" value="male" th:checked="${form.gender}=='male'"/>
+                                            <label for="gender_male">男性</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui radio checkbox">
+                                            <input type="radio" id="gender_female" name="gender" value="female" th:checked="${form.gender}=='female'"/>
+                                            <label for="gender_female">女性</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!--見本用コピペ
                             <select class="ui selection dropdown" name="job">

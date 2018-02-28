@@ -35,7 +35,7 @@
                                     <input type="text" name="kanjiName1" th:value="${form.kanjiName1}" placeholder="山田" onchange="validateKanjiName1()"/>
                                 </div>
 
-                                <div class="field" th:classappend="${form.hasErrors('kanjiName2')} ? 'error'">
+                                <div class="field" th:classappend="${form.hasErrors('kanjiName2')} ? 'error'" onchange="validateKanjiName2()">
                                     <label>名前（漢字）</label>
                                     <input type="text" name="kanjiName2" th:value="${form.kanjiName2}" placeholder="太郎"/>
                                 </div>
@@ -49,12 +49,12 @@
 
                                 <div class="field" th:classappend="${form.hasErrors('kanaName1')} ? 'error'">
                                     <label>苗字（カナ）</label>
-                                    <input type="text" name="kanaName1" th:value="${form.kanaName1}"placeholder="ヤマダ"/>
+                                    <input type="text" name="kanaName1" th:value="${form.kanaName1}"placeholder="ヤマダ" onchange="validateKanaName1()"/>
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('kanaName2')} ? 'error'">
                                     <label>名前（カナ）</label>
-                                    <input type="text" name="kanaName2" th:value="${form.kanaName2}"placeholder="タロウ"/>
+                                    <input type="text" name="kanaName2" th:value="${form.kanaName2}"placeholder="タロウ" onchange="validateKanaName2()"/>
                                 </div>
 
                             </div>
@@ -66,12 +66,12 @@
 
                                 <div class="field" th:classappend="${form.hasErrors('alphabetName1')} ? 'error'">
                                     <label>Last name</label>
-                                    <input type="text" name="alphabetName1" th:value="${form.alphabetName1}"placeholder="Yamada"/>
+                                    <input type="text" name="alphabetName1" th:value="${form.alphabetName1}"placeholder="Yamada" onchange="validateAlphabetName1()"/>
                                 </div>
 
-                                <div class="field" th:classappend="${form.hasErrors('alphabetName2')} ? 'error'">
+                                <div class="field" th:classappend="${form.hasErrors('alphabetName2')} ? 'error'" >
                                     <label>Fast name</label>
-                                    <input type="text" name="alphabetName2" th:value="${form.alphabetName2}"placeholder="Taro"/>
+                                    <input type="text" name="alphabetName2" th:value="${form.alphabetName2}"placeholder="Taro" onchange="validateAlphabetName2()"/>
                                 </div>
                             </div>
 
@@ -241,11 +241,12 @@
                                 <div class="fields">
                                     <p>〒</p>
                                     <div class="four wide field">
-                                        <input type="text" name="zipCode1" th:value="${form.zipCode1}"placeholder="123"/>
+                                        <input type="text" name="zipCode1" th:value="${form.zipCode1}"placeholder="123" onchange="validateZipCode1()"/>
+
                                     </div>
                                     <p>―</p>
                                     <div class="four wide field">
-                                        <input type="text" name="zipCode2" th:value="${form.zipCode2}"placeholder="4567"/>
+                                        <input type="text" name="zipCode2" th:value="${form.zipCode2}"placeholder="4567" onchange="validateZipCode2()"/>
                                     </div>
                                 </div>
                             </div>
@@ -262,17 +263,17 @@
                                 <div class="ui fields">
                                     <div class="five wide field">
                                         <input type="text" name="homePhoneNumber1"
-                                               th:value="${form.homePhoneNumber1}" placeholder="012"/>
+                                               th:value="${form.homePhoneNumber1}" placeholder="012" onchange="validateHomePhoneNumber1()"/>
                                     </div>
                                     <p>―</p>
                                     <div class="five wide field">
                                         <input type="text" name="homePhoneNumber2"
-                                               th:value="${form.homePhoneNumber2}" placeholder="345"/>
+                                               th:value="${form.homePhoneNumber2}" placeholder="345" onchange="validateHomePhoneNumber2()"/>
                                     </div>
                                     <p>―</p>
                                     <div class="five wide field">
                                         <input type="text" name="homePhoneNumber3"
-                                               th:value="${form.homePhoneNumber3}" placeholder="6789"/>
+                                               th:value="${form.homePhoneNumber3}" placeholder="6789" onchange="validateHomePhoneNumber3()"/>
                                     </div>
                                 </div>
                             </div>
@@ -284,17 +285,17 @@
                                 <div class="ui fields">
                                     <div class="five wide field">
                                         <input type="text" name="mobilePhoneNumber1"
-                                               th:value="${form.mobilePhoneNumber1}" placeholder="012"/>
+                                               th:value="${form.mobilePhoneNumber1}" placeholder="012" onchange="validateMobilePhoneNumber1()"/>
                                     </div>
                                     <p>―</p>
                                     <div class="five wide field">
                                         <input type="text" name="mobilePhoneNumber2"
-                                               th:value="${form.mobilePhoneNumber2}" placeholder="345"/>
+                                               th:value="${form.mobilePhoneNumber2}" placeholder="345" onchange="validateMobilePhoneNumber2()"/>
                                     </div>
                                     <p>―</p>
                                     <div class="five wide field">
                                         <input type="text" name="mobilePhoneNumber3"
-                                               th:value="${form.mobilePhoneNumber3}" placeholder="6789"/>
+                                               th:value="${form.mobilePhoneNumber3}" placeholder="6789" onchange="validateMobilePhoneNumber3()"/>
                                     </div>
                                 </div>
                             </div>
@@ -370,12 +371,12 @@
 
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
                                 <label>ローン等のお借り入れ金額</label>
-                                <input type="text" class="number" name="debt" th:value="${form.debt}"placeholder="123"/><span class="unit">万円</span>
+                                <input type="text" class="number" name="debt" th:value="${form.debt}"placeholder="123" onchange="validateDebt()"/><span class="unit">万円</span>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                 <label>昨年の所得</label>
-                                <input type="text" class="number" name="income" th:value="${form.income}"placeholder="123"/><span class="unit">万円</span>
+                                <input type="text" class="number" name="income" th:value="${form.income}"placeholder="123" onchange="validateIncome()"/><span class="unit">万円</span>
                             </div>
 
                             <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'"><!--隙間下いれてー-->
